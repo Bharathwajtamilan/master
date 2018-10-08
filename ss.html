@@ -1,0 +1,92 @@
+<html>
+<head>
+<script>
+function validate()
+{
+var student_id = document.forms["student"]["student_id"]; 
+var student_name = document.forms["student"]["student_name"]; 
+var phone = document.forms["student"]["telephone_no"];  
+var date =  document.forms["student"]["date_of_registration"]; 
+var registered_by = document.forms["student"]["registered_by"]; 
+var email = document.forms["student"]["student_mail"];   
+var stream = document.forms["student"]["stream_id"];   
+if (student_id.value == "")                                 
+    {
+        window.alert("Please enter your student id");
+        student_id.focus();
+return false;
+    }
+  
+    if (student_name.value == "")                              
+    {
+        window.alert("Please enter your name");
+        student_name.focus();
+return false;
+    }
+if (email.value == "")                                  
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+return false;
+    }
+  
+    if (email.value.indexOf("@", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+return false;
+    }
+  
+    if (email.value.indexOf(".", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+return false;
+    }
+if (phone.value == "")                          
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+return false;
+    }
+ if (date.value == "")                 
+    {
+        alert("Please enter date of registration");
+        date.focus();
+return false;
+    }
+    
+  return true;
+}
+</script>
+
+<style>
+		#myTextBox2 { margin-left: 80px; width:300 }
+		.d1{
+		    margin-right:85;
+		    color: blue;
+		    text-align: right;
+		  }
+
+	</style>
+
+</head>
+<body style="background-repeat: no-repeat;background-size: cover;background-image:url(/home/bharathwaj/student.jpg);height:device-height;width:device-width">
+	<div style="text-align:center";>
+	<h1 style="color:green"> Add Student</h1>
+	<div style="display: inline-block; text-align:right;">
+	<form name = "student" action="next.html" onsubmit = "return validate()" "method="post">
+	<h2 style="color:green">Student_Id<input type="text" id="myTextBox2" Text name="student_id"></h2><br>
+        <h2 style="color:green">Name<input type="text" id="myTextBox2" name="student_name"></h2><br>
+        <h2 style="color:green">E-mail<input type="email" id="myTextBox2"name="student_mail"></h2><br> 
+        <h2 style="color:green">Phone<input type="tel" id="myTextBox2" name="telephone_no"></h2><br>
+	<h2 style="color:green">Date_Of_Registration<input type="date" id="myTextBox2" name="date_of_registration"></h2><br>
+        <h2 style="color:green">Registered_By<input type="text" id="myTextBox2" name="registered_by"></h2><br>
+	<h2 style="color:green">Stream_Id<input type="text" id="myTextBox2" name="stream_id"></h2><br>
+	</div>
+	<br><input type="submit" value="submit">
+<input type="reset" value="reset">
+	</form>
+	</div>
+</body>
+</html>
